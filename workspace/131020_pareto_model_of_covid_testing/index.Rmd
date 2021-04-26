@@ -1,0 +1,78 @@
+---
+title: "How does transmission reduction of COVID19 scale with testing levels?"
+author: "Michael T Bretscher"
+date: "4/6/2020"
+output: 
+  md_document:
+  code_folding: hide
+---
+
+```{r setup}
+
+library(tidyverse)
+
+```
+
+# Background
+
+# Methods
+
+
+## Model of the contact tracing process
+
+
+## Available Data
+
+```{r data_preparation, include = F}
+
+#https://ourworldindata.org/covid-testing 
+#OWID cases
+d.owid_cases <- read_csv("data/ourworldindata/total_cases_20200408.csv") 
+  
+d.owid_cases_now <- d.owid_cases %>%
+  filter(date == as.Date("2020-04-08")) %>%
+  select(-date, -World) %>%
+  t() %>%
+  as.data.frame() %>%
+  rownames_to_column(var = "Country") %>%
+  rename(Cases = V1)
+
+#OWID testing
+d.owid_testing <- read_csv("data/ourworldindata/covid-testing-all-observations_20200407.csv")
+
+d.owid_testing_now <- d.owid_testing %>%
+  filter(Date > as.Date("2020-04-01")) %>%
+  separate(Entity, sep = "-", into = c("Country", "Unit")) %>%
+  arrange(desc(Date)) %>%
+  group_by(Country) %>%
+  slice(1) %>%
+  ungroup() %>%
+  select(Country, `Cumulative total`)
+
+
+  
+#cmmid proportion of symptomatic cases reported
+#https://cmmid.github.io/topics/covid19/severity/global_cfr_estimates.html
+d.cmmid <- read_csv("data/cmmid/Percentage_symptomatic_cases_reported_20200408.csv") %>%
+  mutate(Prop_reported = Percent_reported/100,
+         Prop_reported_LL = Percent_reported_LL/100,
+         Prop_reported_UL = Percent_reported_UL/100)
+  
+
+d.analysis <- d.owid_cases %>%
+  #column_to_rownames(date)
+ 
+  
+
+```
+
+
+
+## Assumptions
+
+
+# Results
+
+
+# Discussion
+

@@ -1,0 +1,32 @@
+{
+    "id": "FEECEC89",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1609196902356.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "expression": "d.stocks",
+        "caption": "d.stocks",
+        "totalObservations": 1006,
+        "displayedObservations": 1006,
+        "variables": 10,
+        "cacheKey": "E94AA8A1",
+        "object": "d.stocks",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=d.stocks&cache_key=E94AA8A1&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 3549179834262632773,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1609196902356,
+    "read_only": false,
+    "read_only_alternatives": []
+}
