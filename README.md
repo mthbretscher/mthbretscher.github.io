@@ -21,7 +21,7 @@ permalink: /about/
 highlighter-theme: monokai //you can change your syntax color scheme.
 date_format: "%Y-%M-%D" //and date format.
 ```
-
+ 
 ### Screenshots
 #### Page
 ![alt text](/public/img/screenshot-1.png)
